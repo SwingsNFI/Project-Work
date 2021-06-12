@@ -1,0 +1,14 @@
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\bin\Debug\OrHorApp.Core.dll
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\bin\Debug\OrHorApp.Core.pdb
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\bin\Debug\Newtonsoft.Json.dll
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\bin\Debug\Ninject.dll
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\bin\Debug\Newtonsoft.Json.xml
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\bin\Debug\Ninject.xml
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\obj\Debug\OrHorApp.Core.csprojAssemblyReference.cache
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\obj\Debug\OrHorApp.Core.csproj.CoreCompileInputs.cache
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\obj\Debug\OrHorApp.Core.csproj.Fody.CopyLocal.cache
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\obj\Debug\OrHorApp.Core.csproj.CopyComplete
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\obj\Debug\OrHorApp.Core.dll
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\obj\Debug\OrHorApp.Core.pdb
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\bin\Debug\PropertyChanged.dll
+D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\bin\Debug\PropertyChanged.xml

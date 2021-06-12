@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="OrHorApp.NavMenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrHorApp"
+             xmlns:core="clr-namespace:OrHorApp.Core;assembly=OrHorApp.Core"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             Height="50"
+             d:DesignHeight="50" d:DesignWidth="1000">
+    <UserControl.Template>
+        <ControlTemplate TargetType="UserControl">
+            <Grid Background="{StaticResource VeryDarkRedPalleteBrush}">
+                <Grid.ColumnDefinitions>
+                    <!-- Left Blank Column -->
+                    <ColumnDefinition Width="*" />
+
+                    <!-- Middle Section Column -->
+                    <ColumnDefinition Width="830" />
+
+                    <!-- Right Blank Column -->
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Middle Section -->
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <!-- Left of Navbar Column -->
+                        <ColumnDefinition Width="*" />
+
+                        <!-- Middle of Navbar Column -->
+                        <ColumnDefinition Width="500" />
+
+                        <!-- Right of Navbar Column -->
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left of Navbar -->
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <!-- Logo Image Column -->
+                            <ColumnDefinition Width="auto" />
+
+                            <!-- Blank Space Column -->
+                            <ColumnDefinition Width="*" />
+
+                            <!-- Search Icon Column -->
+                            <ColumnDefinition Width="auto" />
+
+                            <!-- Blank Space Column -->
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Logo Image -->
+                        <Button Grid.Column="0" Style="{StaticResource ImageNavButton}"
+                            Margin="8 4 0 4">
+                            <Image Source="/Images/Logo/OrHor-SymbolOfLogo-2-Asset 6@2x.png" />
+                        </Button>
+
+                        <!-- Search Icon -->
+                        <Button Grid.Column="2" Style="{StaticResource IconNavButton}">
+                            <iconPacks:PackIconMaterial Kind="Magnify" 
+                                                    Width="25"
+                                                    Height="auto" />
+                        </Button>
+                    </Grid>
+
+                    <!-- Middle of Navbar -->
+                    <Grid Grid.Column="1" TextBlock.TextAlignment="Center" 
+                      Background="{StaticResource BlackPalleteBrush}">
+                        <Button Content="Home" Style="{StaticResource ContentSwitchNavButton}" />
+                    </Grid>
+
+                    <!-- Right of Navbar -->
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <!-- Blank Space Column -->
+                            <ColumnDefinition Width="*" />
+
+                            <!-- Notification Icon Column -->
+                            <ColumnDefinition Width="auto" />
+
+                            <!-- Blank Space Column -->
+                            <ColumnDefinition Width="*" />
+
+                            <!-- Profile Picture Column -->
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Notification Icon -->
+                        <Button Grid.Column="1" Style="{StaticResource IconNavButton}">
+                            <iconPacks:PackIconMaterial Kind="Bell" 
+                                                    Width="25"
+                                                    Height="auto" />
+                        </Button>
+
+                        <!-- Profile Picture -->
+                        <Button Grid.Column="3" Style="{StaticResource ImageNavButton}"
+                                Margin="0 4 8 4">
+                            <Border Background="{StaticResource WhitePalleteBrush}"
+                                    Width="40" Height="40"
+                                    CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+                                <TextBlock Text="MF" VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           Foreground="{StaticResource DarkRedPalleteBrush}"
+                                           FontSize="18" />
+                            </Border>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

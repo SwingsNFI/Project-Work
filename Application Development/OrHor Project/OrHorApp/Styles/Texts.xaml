@@ -1,0 +1,232 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:OrHorApp">
+    <!-- Username TextBox -->
+    <Style TargetType="{x:Type TextBox}" x:Key="UsernameTextbox" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="7" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGrayPalleteBrush}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Grid>
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+
+                        <TextBlock IsHitTestVisible="False" Text="{TemplateBinding Tag}" x:Name="placeholder" Padding="{TemplateBinding Padding}"
+                                   VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
+                                   Foreground="{StaticResource BrightGrayPalleteBrush}">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource BrightGrayPalleteBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Password Textbox -->
+    <Style TargetType="{x:Type PasswordBox}" x:Key="PasswordTextbox" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="7" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkGrayPalleteBrush}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+
+        <Setter Property="local:MonitorPasswordProperty.Value" Value="True" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Grid>
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+
+                        <TextBlock IsHitTestVisible="False" Text="{TemplateBinding Tag}" x:Name="placeholder" Padding="{TemplateBinding Padding}"
+                                   VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   Foreground="{StaticResource BrightGrayPalleteBrush}"
+                                   Visibility="{TemplateBinding local:HasTextProperty.Value, Converter={local:BooleanToVisibilityConverter}}">
+
+                        </TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource BrightGrayPalleteBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Border Background Change -->
+    <Style TargetType="{x:Type Border}" x:Key="BorderBackgroundChange">
+        <Setter Property="BorderThickness" Value="4" />
+        <Setter Property="BorderBrush" Value="{StaticResource DarkRedPalleteBrush}" />
+        <Setter Property="Padding" Value="40 60" />
+        <Setter Property="Background" Value="{StaticResource WhitePalleteBrush}" />
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=PasswordText, Path=IsKeyboardFocused}" Value="True">
+                <Setter Property="Background" Value="{StaticResource BrightRedPalleteBrush}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Public Textblock -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="PublicTextblock">
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{StaticResource FuturaHeavy}" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="Foreground" Value="{StaticResource DarkGrayPalleteBrush}" />
+    </Style>
+    
+    <!-- New Account Textblock -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="NewAccountTextblock">
+        <Setter Property="FontSize" Value="42" />
+        <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+    <!-- Story Title Textblock -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="StoryTitleTextblock">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource FuturaHeavy}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Foreground" Value="{StaticResource WhitePalleteBrush}" />
+    </Style>
+
+    <!-- Story Content Textblock -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="StoryContentTextblock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="{StaticResource FuturaBook}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Foreground" Value="{StaticResource WhitePalleteBrush}" />
+    </Style>
+
+    <!-- Feedback Textblock -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="FeedbackTextblock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Foreground" Value="{StaticResource BrightRedPalleteBrush}" />
+    </Style>
+
+    <!-- Hot Stories Textblock -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="HotStoriesTextblock">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Foreground" Value="{StaticResource BrightGrayPalleteBrush}" />
+    </Style>
+
+    <!-- Information Hot Stories Textblock -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="InfoHotStoriesTextblock">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="{StaticResource FuturaLight}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Foreground" Value="{StaticResource BrightGrayPalleteBrush}" />
+    </Style>
+
+    <!-- Date Comment Textblock -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="DateCommentTextblock">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontFamily" Value="{StaticResource FuturaMedium}" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Foreground" Value="{StaticResource BrightGrayPalleteBrush}" />
+    </Style>
+
+    <!-- Add Comment TextBox -->
+    <Style TargetType="{x:Type TextBox}" x:Key="AddCommentTextbox" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{StaticResource BlackPalleteBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource WhitePalleteBrush}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Padding" Value="12 8" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="{StaticResource FuturaBook}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="MaxHeight" Value="90" />
+        <Setter Property="AcceptsReturn" Value="True" />
+        <Setter Property="AcceptsTab" Value="True" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Grid>
+                        <Border x:Name="border" CornerRadius="4" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+
+                        <TextBlock IsHitTestVisible="False" Text="{TemplateBinding Tag}" x:Name="placeholder" Padding="{TemplateBinding Padding}"
+                                   VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
+                                   Foreground="{StaticResource BrightGrayPalleteBrush}">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

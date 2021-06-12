@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="OrHorApp.StoryListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrHorApp"
+             xmlns:core="clr-namespace:OrHorApp.Core;assembly=OrHorApp.Core"
+             mc:Ignorable="d" 
+             Width="500"
+             d:DesignHeight="450" d:DesignWidth="500">
+    <Grid DataContext="{x:Static core:StoryOfGenreDesignModel.Instance}" Background="{StaticResource BlackPalleteBrush}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Rectangle of the Adding Story -->
+                <Border Grid.Row="0" Padding="18" Margin="0 0 0 20" CornerRadius="4" 
+                    Background="{StaticResource VeryDarkRedPalleteBrush}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Profile Name section -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!-- Profile Name -->
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <TextBlock Text="By:" Margin="0 0 5 0" Foreground="{StaticResource WhitePalleteBrush}" />
+
+                                <Border Background="{StaticResource DarkRedPalleteBrush}"
+                                            CornerRadius="1" Padding="2">
+                                    <TextBlock Text="Muhammad Faisal Sanjaya" Foreground="{StaticResource WhitePalleteBrush}" 
+                                           FontFamily="{StaticResource FuturaHeavy}" />
+                                </Border>
+                            </StackPanel>
+                        </Grid>
+
+                        <!-- The Adding Story -->
+                        <Grid Grid.Row="1">
+                            <Button Content="What story do you have? or...fear?" Style="{StaticResource AddStoryButton}"
+                                    Margin="0 8 0 0" />
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <ItemsControl Grid.Row="1" ItemsSource="{Binding Items}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:StoryListItemControl />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

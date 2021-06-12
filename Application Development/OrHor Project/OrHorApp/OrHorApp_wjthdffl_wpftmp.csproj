@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\PropertyChanged.Fody.3.2.9\build\PropertyChanged.Fody.props" Condition="Exists('packages\PropertyChanged.Fody.3.2.9\build\PropertyChanged.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6CD2745-9B40-4BE9-B983-027284E1A946}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OrHorApp</RootNamespace>
+    <AssemblyName>OrHorApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttachedProperties\BaseAttachedProperty.cs" />
+    <Compile Include="AttachedProperties\NoFrameHistory.cs" />
+    <Compile Include="AttachedProperties\ButtonAttachedProperty.cs" />
+    <Compile Include="AttachedProperties\FrameworkElementAttachedProperties.cs" />
+    <Compile Include="AttachedProperties\PasswordBoxAttachedProperties.cs" />
+    <Compile Include="Controls\Home\Genre\GenreListControl.xaml.cs">
+      <DependentUpon>GenreListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Home\Genre\GenreListItemControl.xaml.cs">
+      <DependentUpon>GenreListItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Home\Story\StoryListControl.xaml.cs">
+      <DependentUpon>StoryListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Home\Story\StoryListItemControl.xaml.cs">
+      <DependentUpon>StoryListItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HotStoriesControl.xaml.cs">
+      <DependentUpon>HotStoriesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavMenuControl.xaml.cs">
+      <DependentUpon>NavMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PageHost.xaml.cs">
+      <DependentUpon>PageHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PublicTextControl.xaml.cs">
+      <DependentUpon>PublicTextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SideMenuControl.xaml.cs">
+      <DependentUpon>SideMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ValueConverters\IocConverter.cs" />
+    <Compile Include="ValueConverters\ApplicationPageValueConverter.cs" />
+    <Compile Include="ValueConverters\BaseValueConverter.cs" />
+    <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="ViewModels\WindowViewModel.cs" />
+    <Compile Include="Window\WindowResizer.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrHorApp.Core\OrHorApp.Core.csproj">
+      <Project>{d31923b9-27ad-463c-a69e-bef27c42a877}</Project>
+      <Name>OrHorApp.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Fody.6.2.4\build\Fody.targets" Condition="Exists('packages\Fody.6.2.4\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Fody.6.2.4\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.6.2.4\build\Fody.targets'))" />
+    <Error Condition="!Exists('packages\PropertyChanged.Fody.3.2.9\build\PropertyChanged.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\PropertyChanged.Fody.3.2.9\build\PropertyChanged.Fody.props'))" />
+  </Target>
+  <ItemGroup>
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\ControlzEx.4.3.2\lib\net462\ControlzEx.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.BoxIcons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Core.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Entypo.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.EvaIcons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.FeatherIcons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.FontAwesome.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Ionicons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.JamIcons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Material.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.MaterialDesign.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.MaterialLight.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Microns.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Modern.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Octicons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.PicolIcons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.RPGAwesome.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.SimpleIcons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Typicons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Unicons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.WeatherIcons.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\MahApps.Metro.IconPacks.4.5.0\lib\net47\MahApps.Metro.IconPacks.Zondicons.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\Ninject.3.3.4\lib\net45\Ninject.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp.Core\bin\Debug\OrHorApp.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.Aero2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.dll" />
+    <ReferencePath Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\packages\PropertyChanged.Fody.3.2.9\lib\net40\PropertyChanged.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Extensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\WindowsBase.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Controls\Home\Genre\GenreListControl.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Controls\Home\Genre\GenreListItemControl.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Controls\Home\Story\StoryListControl.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Controls\Home\Story\StoryListItemControl.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Controls\HotStoriesControl.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Controls\NavMenuControl.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Controls\PageHost.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Controls\PublicTextControl.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Controls\SideMenuControl.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\MainWindow.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Pages\HomePage.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Pages\LoginPage.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\Pages\RegisterPage.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\App.g.cs" />
+    <Compile Include="D:\Tugas\Kelas 12\Project Work\Application Development\OrHor Project\OrHorApp\obj\Release\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>

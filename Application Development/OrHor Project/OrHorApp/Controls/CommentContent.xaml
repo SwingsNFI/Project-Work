@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="OrHorApp.CommentContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrHorApp"
+             mc:Ignorable="d" 
+             d:DesignWidth="500">
+    <!-- Backend Of Pop Menu -->
+    
+    <Border Padding="0 0 0 10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="22" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Border Padding="18 10" CornerRadius="4" BorderThickness="1"
+                Background="{StaticResource VeryDarkRedPalleteBrush}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Profile Picture -->
+                    <Grid Grid.Column="0" Background="Transparent"
+                      Margin="0 0 10 0" VerticalAlignment="Top">
+                        <Border Background="{StaticResource WhitePalleteBrush}"
+                            Width="36" Height="36"
+                            CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+                            <TextBlock Text="SF" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="{StaticResource DarkRedPalleteBrush}"
+                                   FontSize="18" />
+                        </Border>
+                    </Grid>
+
+                    <!-- Comment TextBox -->
+                    <TextBox Grid.Column="1" Tag="Add a comment..." Style="{StaticResource AddCommentTextbox}" />
+
+                    <!-- Add Comment Button -->
+                    <Button Content="Add" Grid.Column="2" Style="{StaticResource AddCommentButton}"
+                        Margin="10 0 0 0" />
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <!-- Comment Title -->
+                    <TextBlock Text="Comment" Foreground="{StaticResource WhitePalleteBrush}"
+                           FontSize="18" Margin="0 0 0 10"/>
+
+                    <!-- Horizontal Line -->
+                    <Separator Background="{StaticResource DarkGrayPalleteBrush}" />
+                </StackPanel>
+
+                <!-- Comments from other users -->
+                <Grid Grid.Row="1" Margin="0 10 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Profile Picture -->
+                    <Button Grid.Column="0" Style="{StaticResource ImageNavButton}"
+                      Margin="0 0 6 0" VerticalAlignment="Top">
+                        <Border Background="{StaticResource WhitePalleteBrush}"
+                            Width="36" Height="36"
+                            CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+                            <TextBlock Text="S" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="{StaticResource DarkRedPalleteBrush}"
+                                   FontSize="18" />
+                        </Border>
+                    </Button>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" Background="{StaticResource VeryDarkRedPalleteBrush}"
+                                Padding="6" CornerRadius="4">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Profile Name -->
+                                    <Border Background="{StaticResource DarkRedPalleteBrush}"
+                                            CornerRadius="1" Padding="2" Margin="0 0 0 5">
+                                        <TextBlock Text="Suparman" Foreground="{StaticResource WhitePalleteBrush}" 
+                                                   FontFamily="{StaticResource FuturaHeavy}" />
+                                    </Border>
+                                </Grid>
+
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Comment from User -->
+                                    <TextBlock Text="Wkwkw aslkfalksd sladjfsa asldkfj" Foreground="{StaticResource WhitePalleteBrush}"
+                                               FontSize="12" FontFamily="{StaticResource FuturaBook}" TextWrapping="Wrap" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Reply Comment -->
+                                <Button Grid.Column="0" Content="Reply" Style="{StaticResource ReplyCommentButton}" />
+
+                                <!-- Dot -->
+                                <TextBlock Grid.Column="1" Text="." FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           Foreground="{StaticResource BrightGrayPalleteBrush}" Margin="1 0" />
+
+                                <!-- Date Comment -->
+                                <TextBlock Grid.Column="2" Text="17 Agustus 2018" Style="{StaticResource DateCommentTextblock}" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+    
+</UserControl>

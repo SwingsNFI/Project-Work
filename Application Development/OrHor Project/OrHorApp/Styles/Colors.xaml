@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:OrHorApp">
+    <!-- Adding colors -->
+    <Color x:Key="BlackPallete">#080303</Color>
+    <SolidColorBrush x:Key="BlackPalleteBrush" Color="{StaticResource BlackPallete}" />
+
+    <Color x:Key="DarkRedPallete">#9B030D</Color>
+    <SolidColorBrush x:Key="DarkRedPalleteBrush" Color="{StaticResource DarkRedPallete}" />
+
+    <Color x:Key="BrightRedPallete">#F00F1E</Color>
+    <SolidColorBrush x:Key="BrightRedPalleteBrush" Color="{StaticResource BrightRedPallete}" />
+
+    <Color x:Key="DarkGrayPallete">#5A5355</Color>
+    <SolidColorBrush x:Key="DarkGrayPalleteBrush" Color="{StaticResource DarkGrayPallete}" />
+
+    <Color x:Key="WhitePallete">#F8F7F7</Color>
+    <SolidColorBrush x:Key="WhitePalleteBrush" Color="{StaticResource WhitePallete}" />
+
+    <Color x:Key="VeryDarkRedPallete">#170D0D</Color>
+    <SolidColorBrush x:Key="VeryDarkRedPalleteBrush" Color="{StaticResource VeryDarkRedPallete}" />
+
+    <Color x:Key="BrightGrayPallete">#958989</Color>
+    <SolidColorBrush x:Key="BrightGrayPalleteBrush" Color="{StaticResource BrightGrayPallete}" />
+
+    <Color x:Key="CreamRedPallete">#361F1F</Color>
+    <SolidColorBrush x:Key="CreamRedPalleteBrush" Color="{StaticResource CreamRedPallete}" />
+
+    <Color x:Key="HoverPallete">#2A1E1E</Color>
+    <SolidColorBrush x:Key="HoverPalleteBrush" Color="{StaticResource HoverPallete}" />
+</ResourceDictionary>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrHorApp", "OrHorApp.csproj", "{A6CD2745-9B40-4BE9-B983-027284E1A946}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrHorApp.Core", "..\OrHorApp.Core\OrHorApp.Core.csproj", "{D31923B9-27AD-463C-A69E-BEF27C42A877}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6CD2745-9B40-4BE9-B983-027284E1A946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6CD2745-9B40-4BE9-B983-027284E1A946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6CD2745-9B40-4BE9-B983-027284E1A946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6CD2745-9B40-4BE9-B983-027284E1A946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D31923B9-27AD-463C-A69E-BEF27C42A877}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D31923B9-27AD-463C-A69E-BEF27C42A877}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D31923B9-27AD-463C-A69E-BEF27C42A877}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D31923B9-27AD-463C-A69E-BEF27C42A877}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EF2C7AC-FFBC-4D35-B385-3FE9066D47F8}
+	EndGlobalSection
+EndGlobal
